@@ -62,6 +62,11 @@ export default function Meme() {
                 <h2 className="meme--text top">{meme.topText}</h2>
                 <h2 className="meme--text bottom">{meme.bottomText}</h2>
             </div>
+
+            <br />
+            <footer style={{textAlign:'center'}}>
+                Designed by <a href="https://github.com/Donice">Donice Ubaru</a>
+            </footer>
         </main>
     )
 }
