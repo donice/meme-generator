@@ -1,0 +1,35 @@
+.Navbar {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: left;
+    /* border: 1px solid red; */
+    background-image: linear-gradient(90deg, rgb(214, 0, 189), purple);
+    /* width: 100%; */
+    height: auto;
+    color: white;
+    padding: 0px 30px;
+    justify-content: space-between;
+}
+
+.Navbar h4 {
+    font-size: 13px;
+    font-weight: 500;
+    
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
+}
+
+.Logo img {
+    width: 33px;
+}
+
+.Logo h1 {
+    font-size: 23px;
+    padding: 0px 10px;
+    letter-spacing: -1px;
+}
+
