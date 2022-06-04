@@ -12,15 +12,7 @@ export default function Meme() {
     })
     const [allMemes, setAllMemes] = React.useState([])
 
-    /**
-     * useEffect takes in a function as its parameter.
-     * If that function returns nothing, it needs to be a cleanup function.
-     * Otherwise, it should return nothing; If we make it an async function, it
-     * automatically returns a promise instead of a function or nothing.
-     * Therefore, if you want to use async operation inside of useEffect, you
-     * need to define the function seperately inside of a callback function,
-     * as seen below:
-     */
+
     
     useEffect(() => {
 
