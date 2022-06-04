@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 // import memesData from "../memesData.js" Using APis instead
 import '../App.css'
 import { useState } from "react"
@@ -11,12 +11,28 @@ export default function Meme() {
         randomImage: "http://i.imgflip.com/1bij.jpg" 
     })
     const [allMemes, setAllMemes] = React.useState([])
+
+    /**
+     * useEffect takes in a function as its parameter.
+     * If that function returns nothing, it needs to be a cleanup function.
+     * Otherwise, it should return nothing; If we make it an async function, it
+     * automatically returns a promise instead of a function or nothing.
+     * Therefore, if you want to use async operation inside of useEffect, you
+     * need to define the function seperately inside of a callback function,
+     * as seen below:
+     */
     
-    useState(() => {
-        // console.log('Use Effect ran successfully')
-        fetch("https://api.imgflip.com/get_memes")
-            .then(res => res.json())
-            .then(data => setAllMemes(data.data.memes))
+    useEffect(() => {
+
+        // fetch("https://api.imgflip.com/get_memes")
+        //     .then(res => res.json())
+        //     .then(data => setAllMemes(data.data.memes))
+        async function getMemes() {
+            const res = await fetch("https://api.imgflip.com/get_memes")
+            const data = await res.json()
+            setAllMemes(data.data.meme)
+        }
+        getMemes()
     }, [])
 
     function getMemeImage() {
